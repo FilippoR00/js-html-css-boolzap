@@ -42,7 +42,13 @@
                 </div>
             </div>
             <div class="chats-bar">
-                <div class="chat active">
+                <div class="chat" v-for="(contact, index) in contacts" :class="pointer == index ? 'active' : ''">
+                    <div class="user-logo">
+                        <img :src="initImage(index)" alt="User image">
+                    </div>
+                    <div>{{contact.name}}</div>
+                </div>
+                <!-- <div class="chat active">
                     <div class="user-logo">
                         <img src="img/avatar_1.jpg" alt="User image">
                     </div>
@@ -65,7 +71,7 @@
                         <img src="img/avatar_4.jpg" alt="User image">
                     </div>
                     <div>Luisa</div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="right-col">
