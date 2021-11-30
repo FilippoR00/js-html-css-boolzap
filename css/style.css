@@ -2,6 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.2) rgba(0,0,0,0.1);
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
 }
 
 body{
@@ -41,6 +55,7 @@ body{
     background-color: #ededed;
     display: flex;
     justify-content: space-between;
+    border-right: 1px solid #d4d4d4;
 }
 
 .top-bar .main-user{
@@ -48,7 +63,7 @@ body{
     display: flex;
 }
 
-.top-bar .main-user img{
+.top-bar img{
     height: 50px;
     margin: 5px 15px;
     border-radius: 50%;
@@ -62,7 +77,7 @@ body{
 
 .control-btn i{
     line-height: 60px;
-    padding: 0px 10px;
+    padding-right: 20px;
     font-size: 20px;
     color: #b1b1b1;
     cursor: pointer;
@@ -163,12 +178,105 @@ body{
     background-color: #e9ebeb;
 }
 
+.right-col{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top-bar .chat-user{
+    line-height: 60px;
+    display: flex;
+}
+
+.chat-user > div > div{
+    line-height: 15px;
+}
+
+.chat-user > div > div:last-child{
+    color: gray;
+    font-size: 13px;
+}
+
+.chat-user .user-info{
+    height: 30px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.message-box{
+    height: calc(100% - 120px);
+    background-image: url('../img/mine.jpg');
+    overflow-y: scroll;
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-box .right-msg{
+    align-self: flex-end;
+    margin: 2px 0px;
+    padding: 10px;
+    background-color: #dcf8c6;
+    border-radius: 8px;
+    box-shadow: 0 1px .5px rgba(0,0,0,.13);
+    max-width: 70%;
+}
+
+.message-box .left-msg{
+    align-self: flex-start;
+    margin: 2px 0px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px .5px rgba(0,0,0,.13);
+    max-width: 70%;
+}
+
+.message-box .date{
+    font-size: 11px;
+    color: #999;
+    text-align: end;
+}
 
 
 
 
 
+.message-bar{
+    width: 100%;
+    height: 60px;
+    background-color: #ededed;
+    display: flex;
 
+    line-height: 60px;
+}
+
+.message-bar i{
+    width: 6%;
+    line-height: 60px;
+    font-size: 23px;
+    color: #777;
+    text-align: center;
+    cursor: pointer;
+}
+
+.message-bar div input{
+    width: 98%;
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #222;
+    font-weight: 500;
+    margin: 0px 1%;
+    border: none;
+    border-radius: 20px;
+}
+
+.message-bar div{
+    width: 82%;
+}
 
 
 
