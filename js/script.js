@@ -91,9 +91,11 @@ const app = new Vue({
         ],
     },
     methods: {
+        // funzione che genera il percorso delle immagini 
         initImage : function(index){
             return "img/avatar" + this.contacts[index].avatar + ".jpg";
         },
+        // funzione che aggiunge i nuovi messaggi all'array, li stampa a video e genera il messaggio di risposta dopo un secondo 
         sendMsg : function() {
             if(this.tempMsg != "" && this.tempMsg != " "){
                 this.contacts[this.pointer].messages.push({
@@ -110,6 +112,7 @@ const app = new Vue({
                     });}, 1000);
             }
         },
+        // funzione che compara due stringhe (una proveniente dal nome dell'utente e una proveniente dall'input di testo), e ne trova le similitudini. Poi tramite un v-if si decide se far stampare a video l'utente.
         search : function(index){
             if (this.contacts[index].name.toLowerCase().includes(this.tempSearch.toLowerCase())) {
                 return true
@@ -117,6 +120,7 @@ const app = new Vue({
                 return false
             }
         },
+        // funzione che prende giorno mese anno ora minuti e secondi e ritorna una stringa
         createData : function() {
             let today = new Date();
             let day = today.getDate();

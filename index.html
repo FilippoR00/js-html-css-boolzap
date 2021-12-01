@@ -18,7 +18,10 @@
 </head>
 <body>
     <div class="container" id="root">
+
+        <!-- colonna di sinistra  -->
         <div class="left-col">
+            <!-- barra utente  -->
             <div class="top-bar">
                 <div class="main-user">
                     <div class="user-logo">
@@ -32,6 +35,7 @@
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
+            <!-- barra notifica  -->
             <div class="notify-bar">
                 <div><i class="fas fa-bell-slash"></i></div>
                 <div>
@@ -39,12 +43,14 @@
                     <div><a href="#">Attiva notifiche desktop</a></div>
                 </div>
             </div>
+            <!-- barra di ricerca  -->
             <div class="search-bar">
                 <div class="search">
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="tempSearch">
                 </div>
             </div>
+            <!-- seleziona chat  -->
             <div class="chats-bar">
                 <div class="chat" v-for="(contact, index) in contacts" :class="pointer == index ? 'active' : ''" @click="pointer = index"  v-if="search(index)">
                     <div class="user-logo">
@@ -54,7 +60,10 @@
                 </div>
             </div>
         </div>
+
+        <!-- colonna di destra -->
         <div class="right-col">
+            <!-- barra chat aperta  -->
             <div class="top-bar">
                 <div class="chat-user">
                     <div class="user-logo">
@@ -71,12 +80,14 @@
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
+            <!-- sezione messaggi chat aperta  -->
             <div class="message-box">
                 <div v-for="(msg, index) in contacts[pointer].messages" :class="msg.status == 'sent' ? 'right-msg' : 'left-msg'">
                     <div class="msg">{{msg.message}}</div>
                     <div class="date">{{msg.date}}</div>
                 </div>
             </div>
+            <!-- barra di scrittura messaggio -->
             <div class="message-bar">
                 <i class="far fa-smile"></i>
                 <i class="fas fa-paperclip"></i>

@@ -38,6 +38,7 @@ body{
 
 }
 
+/* colonna sinistra */
 .left-col{
     width: 30%;
     height: 100%;
@@ -45,11 +46,15 @@ body{
     overflow: hidden;
 }
 
+/* colonna destra */
 .right-col{
     width: 70%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
+/* barra utente  */
 .top-bar{
     height: 60px;
     background-color: #ededed;
@@ -83,6 +88,7 @@ body{
     cursor: pointer;
 }
 
+/* barra notifica  */
 .notify-bar{
     height: 87px;
     background-color: #9de1fe;
@@ -111,6 +117,7 @@ body{
     cursor: pointer;
 }
 
+/* barra di ricerca  */
 .search-bar{
     height: 50px;
     background-color: #f6f6f6;
@@ -143,6 +150,7 @@ body{
     font-weight: 500;
 }
 
+/* seleziona chat  */
 .chats-bar{
     height: calc(100% - 50px - 87px - 60px);
     display: flex;
@@ -178,12 +186,7 @@ body{
     background-color: #eee;
 }
 
-.right-col{
-    display: flex;
-    flex-direction: column;
-}
-
-
+/* barra chat aperta  */
 .top-bar .chat-user{
     line-height: 60px;
     display: flex;
@@ -206,6 +209,7 @@ body{
     cursor: pointer;
 }
 
+/* sezione messaggi chat aperta  */
 .message-box{
     height: calc(100% - 120px);
     background-image: url('../img/mine.jpg');
@@ -242,6 +246,7 @@ body{
     padding-top: 5px;
 }
 
+/* barra di scrittura messaggio  */
 .message-bar{
     width: 100%;
     height: 60px;
