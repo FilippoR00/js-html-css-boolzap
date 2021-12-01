@@ -42,15 +42,23 @@
             <div class="search-bar">
                 <div class="search">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="tempSearch">
                 </div>
             </div>
-            <div class="chats-bar">
+            <div class="chats-bar" :class="tempSearch == '' ? 'show' : 'hide'">
                 <div class="chat" v-for="(contact, index) in contacts" :class="pointer == index ? 'active' : ''" @click="pointer = index">
                     <div class="user-logo">
                         <img :src="initImage(index)" alt="User image">
                     </div>
                     <div>{{contact.name}}</div>
+                </div>
+            </div>
+            <div class="chats-bar" :class="tempSearch == '' ? 'hide' : 'show'">
+                <div class="chat" v-for="(contact, index) in contacts" @click="pointer = index">
+                    <div class="user-logo">
+                        <img :src="initImage(index)" alt="User image">
+                    </div>
+                    <div>giggggi</div>
                 </div>
             </div>
         </div>

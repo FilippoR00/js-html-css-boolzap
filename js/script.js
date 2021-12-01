@@ -3,6 +3,7 @@ const app = new Vue({
     data: {
         pointer: 0,
         tempMsg: '',
+        tempSearch: '',
         contacts: [
             {
                 name: 'Michele',
@@ -96,21 +97,44 @@ const app = new Vue({
         sendMsg : function() {
             if(this.tempMsg != "" && this.tempMsg != " "){
                 this.contacts[this.pointer].messages.push({
-                    date: '10/01/2020 15:50:00',
+                    date: this.createData(),
                     message: this.tempMsg,
                     status: 'sent'
                 });
                 this.tempMsg = "";
                 setTimeout(() => {
                     this.contacts[this.pointer].messages.push({
-                        date: '10/01/2020 15:50:00',
+                        date: this.createData(),
                         message: 'ok',
                         status: 'received'
                     });}, 1000);
             }
         },
+        search : function(){
+            if(tempSearch != ''){
+                for(let i=0; i < this.contacts.length; i++){
+                    console.log('cacca');
+                }
+            }
+        },
+        createData : function() {
+            let today = new Date();
+            let day = today.getDate();
+            let month = today.getMonth() + 1;
+            let year = today.getFullYear();
+            if (day < 10) day = '0' + day;
+            if (month < 10) month = '0' + month;
+            let date = day + '/' + month + '/' + year;
+            let ora = today.getHours();
+            let minuti = today.getMinutes();
+            let secondi = today.getSeconds();
+            if (secondi < 10) secondi = '0' + secondi;
+            if (minuti < 10) minuti = '0' + minuti;
+            if (ora < 10) ora = '0' + ora;
+            let time = ora + ":" + minuti + ":" + secondi;
+            return date + " " + time;
+        },
     },
-
 
 
 
