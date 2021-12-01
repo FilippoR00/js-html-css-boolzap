@@ -2,6 +2,7 @@ const app = new Vue({
     el: "#root",
     data: {
         pointer: 0,
+        tempMsg: '',
         contacts: [
             {
                 name: 'Michele',
@@ -92,8 +93,23 @@ const app = new Vue({
         initImage : function(index){
             return "img/avatar" + this.contacts[index].avatar + ".jpg";
         },
+        sendMsg : function() {
+            if(this.tempMsg != "" && this.tempMsg != " "){
+                this.contacts[this.pointer].messages.push({
+                    date: '10/01/2020 15:50:00',
+                    message: this.tempMsg,
+                    status: 'sent'
+                });
+                this.tempMsg = "";
+                setTimeout(() => {
+                    this.contacts[this.pointer].messages.push({
+                        date: '10/01/2020 15:50:00',
+                        message: 'ok',
+                        status: 'received'
+                    });}, 1000);
+            }
+        },
     },
-
 
 
 

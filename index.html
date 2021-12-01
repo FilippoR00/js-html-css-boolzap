@@ -81,9 +81,10 @@
                 <i class="far fa-smile"></i>
                 <i class="fas fa-paperclip"></i>
                 <div>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="tempMsg" @keyup.enter="sendMsg">
                 </div>
-                <i class="fas fa-microphone"></i>
+                <i class="right-btn" :class="tempMsg != '' ? '' : 'fas fa-microphone'"></i>
+                <i class="right-btn" :class="tempMsg != '' ? 'fas fa-paper-plane' : ''" @click="sendMsg"></i>
             </div>
         </div>
     </div>

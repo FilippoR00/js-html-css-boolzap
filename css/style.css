@@ -239,6 +239,7 @@ body{
     font-size: 11px;
     color: #999;
     text-align: end;
+    padding-top: 5px;
 }
 
 .message-bar{
@@ -247,6 +248,7 @@ body{
     background-color: #ededed;
     display: flex;
     line-height: 60px;
+    position: relative;
 }
 
 .message-bar i{
@@ -267,6 +269,11 @@ body{
     margin: 0px 1%;
     border: none;
     border-radius: 20px;
+}
+
+.message-bar i.right-btn{
+    position: absolute;
+    right: 0px;
 }
 
 .message-bar div{
