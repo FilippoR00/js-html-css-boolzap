@@ -110,11 +110,11 @@ const app = new Vue({
                     });}, 1000);
             }
         },
-        search : function(){
-            if(tempSearch != ''){
-                for(let i=0; i < this.contacts.length; i++){
-                    console.log('cacca');
-                }
+        search : function(index){
+            if (this.contacts[index].name.toLowerCase().includes(this.tempSearch.toLowerCase())) {
+                return true
+            } else {
+                return false
             }
         },
         createData : function() {
@@ -135,7 +135,4 @@ const app = new Vue({
             return date + " " + time;
         },
     },
-
-
-
 })
