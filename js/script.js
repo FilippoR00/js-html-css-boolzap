@@ -138,5 +138,11 @@ const app = new Vue({
             let time = ora + ":" + minuti + ":" + secondi;
             return date + " " + time;
         },
+        // funzione che genera un numero random compreso tra min e max 
+        random(min,max){
+            let temp = Math.floor(Math.random() * max - min + 1) + min;
+            if(temp < 10) temp = '0' + temp;
+            return temp;
+        }
     },
 })
