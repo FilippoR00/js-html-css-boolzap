@@ -11,6 +11,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css  -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container" id="root">
@@ -42,46 +46,22 @@
                 </div>
             </div>
             <div class="chats-bar">
-                <div class="chat" v-for="(contact, index) in contacts" :class="pointer == index ? 'active' : ''">
+                <div class="chat" v-for="(contact, index) in contacts" :class="pointer == index ? 'active' : ''" @click="pointer = index">
                     <div class="user-logo">
                         <img :src="initImage(index)" alt="User image">
                     </div>
                     <div>{{contact.name}}</div>
                 </div>
-                <!-- <div class="chat active">
-                    <div class="user-logo">
-                        <img src="img/avatar_1.jpg" alt="User image">
-                    </div>
-                    <div>Michele</div>
-                </div>
-                <div class="chat">
-                    <div class="user-logo">
-                        <img src="img/avatar_2.jpg" alt="User image">
-                    </div>
-                    <div>Fabio</div>
-                </div>
-                <div class="chat">
-                    <div class="user-logo">
-                        <img src="img/avatar_3.jpg" alt="User image">
-                    </div>
-                    <div>Samuele</div>
-                </div>
-                <div class="chat">
-                    <div class="user-logo">
-                        <img src="img/avatar_4.jpg" alt="User image">
-                    </div>
-                    <div>Luisa</div>
-                </div> -->
             </div>
         </div>
         <div class="right-col">
             <div class="top-bar">
                 <div class="chat-user">
                     <div class="user-logo">
-                        <img src="img/avatar_1.jpg" alt="User image">
+                        <img :src="initImage(pointer)" alt="User image">
                     </div>
                     <div class="user-info">
-                        <div>Michele</div>
+                        <div>{{contacts[pointer].name}}</div>
                         <div>Ultimo accesso oggi alle</div>
                     </div>
                     
@@ -92,17 +72,9 @@
                 </div>
             </div>
             <div class="message-box">
-                <div class="right-msg">
-                    <div class="msg">Hai portato a spasso il cane?</div>
-                    <div class="date">10/01/2020 15:30:55</div>
-                </div>
-                <div class="right-msg">
-                    <div class="msg">Ricordati di dargli da mangiare</div>
-                    <div class="date">10/01/2020 15:50:00</div>
-                </div>
-                <div class="left-msg">
-                    <div class="msg">Tutto fatto!</div>
-                    <div class="date">10/01/2020 16:15:22</div>
+                <div v-for="(msg, index) in contacts[pointer].messages" :class="msg.status == 'sent' ? 'right-msg' : 'left-msg'">
+                    <div class="msg">{{msg.message}}</div>
+                    <div class="date">{{msg.date}}</div>
                 </div>
             </div>
             <div class="message-bar">

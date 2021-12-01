@@ -19,7 +19,7 @@
 }
 
 body{
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
     background: rgb(0,150,136);
     background: linear-gradient(180deg, #009688 5%, #d7dbd6 5%); 
     height: 2500px;
@@ -157,8 +157,8 @@ body{
     cursor: pointer;
 }
 
-.chats-bar .chat:hover{
-    background-color: #fafafa;
+.chat:hover{
+    background-color: #f8f8f8;
 }
 
 .chats-bar .chat img{
@@ -175,7 +175,7 @@ body{
 }
 
 .chats-bar .active{
-    background-color: #e9ebeb;
+    background-color: #eee;
 }
 
 .right-col{

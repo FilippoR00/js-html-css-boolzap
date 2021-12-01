@@ -91,7 +91,7 @@ const app = new Vue({
     methods: {
         initImage : function(index){
             return "img/avatar" + this.contacts[index].avatar + ".jpg";
-        }
+        },
     },
 
 
