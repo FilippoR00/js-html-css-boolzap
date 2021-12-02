@@ -158,8 +158,14 @@ const app = new Vue({
             return temp;
         },
         deleteMsg(index){
+            if (this.contacts[this.pointer].messages[1] == undefined){
+                this.contacts.splice(this.pointer, 1);
+            }
             this.contacts[this.pointer].messages.splice(index, 1);
-            this.contacts[this.pointer].messages[index].arrowBox = true;
+            if (this.contacts[this.pointer].messages[index] != undefined){
+                this.contacts[this.pointer].messages[index].arrowBox = true;
+            }
+            
         }
     },
 })

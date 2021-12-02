@@ -56,7 +56,12 @@
                     <div class="user-logo">
                         <img :src="initImage(index)" alt="User image">
                     </div>
-                    <div>{{contact.name}}</div>
+                    <div>
+                        <div>{{contact.name}}</div>
+                        <div class="last-msg">{{contact.messages[contact.messages.length - 1].message}}</div>
+                        <div class="last-msg-date">{{contact.messages[contact.messages.length - 1].date}}</div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
