@@ -52,7 +52,7 @@
             </div>
             <!-- seleziona chat  -->
             <div class="chats-bar">
-                <div class="chat" v-for="(contact, index) in contacts" :class="pointer == index ? 'active' : ''" @click="pointer = index"  v-if="search(index)">
+                <div class="chat" v-for="(contact, index) in contacts" :class="pointer == index ? 'active' : ''" @click="pointer = index, initMsg = 0"  v-if="search(index)">
                     <div class="user-logo">
                         <img :src="initImage(index)" alt="User image">
                     </div>
@@ -68,6 +68,15 @@
 
         <!-- colonna di destra -->
         <div class="right-col">
+            <!-- pagina iniziale  -->
+            <div class="init-msg" v-if="initMsg == true ? true : false">
+                <div class="container-init">
+                    <img src="img/initPage.jpg" alt="keep phone connnected image">
+                    <h1>Mantieni il telefono connesso</h1>
+                    <p>Whatsapp si collega al tuo telefono per sincronizzare i messaggi. Per ridurre l'utilizzo dei dati, collega il telefono al Wi-Fi.</p>
+                    <h6><i class="fas fa-laptop"></i> Chiama da desktop con WhatsApp per Windows. <a href="#">Scaricala qui</a>.</h6>
+                </div>
+            </div>
             <!-- barra chat aperta  -->
             <div class="top-bar">
                 <div class="chat-user">

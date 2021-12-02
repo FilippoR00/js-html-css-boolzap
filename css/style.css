@@ -35,7 +35,10 @@ body{
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.06),0 2px 5px 0 rgba(0,0,0,.2);
     background-color: #fff;
     display: flex;
+}
 
+input{
+    outline: none;
 }
 
 /* colonna sinistra */
@@ -52,6 +55,7 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 /* barra utente  */
@@ -206,6 +210,60 @@ body{
     font-size: 12px;
     width: 30%;
     text-align: end;
+}
+
+/* pagina iniziale */
+.init-msg{
+    background-color: #f8f9fa;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    border-bottom: 6px solid #4adf83;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-init{
+    width: 100%;
+    height: 70%;
+}
+
+.init-msg img{
+    height: 60%;
+}
+
+.init-msg h1{
+    font-size: 35px;
+    font-weight: 300;
+    color: #444;
+    padding: 25px;
+}
+
+.init-msg p{
+    margin: auto;
+    width: 55%;
+    font-size: 14px;
+    font-weight: 300;
+    color: #777;
+    line-height: 20px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #dadada;
+}
+
+.init-msg h6{
+    font-size: 14px;
+    font-weight: 300;
+    color: #777;
+    padding-top: 30px;
+}
+
+.init-msg h6 a{
+    color: #0aa545;
+    padding-top: 30px;
+    text-decoration: none;
 }
 
 /* barra chat aperta  */
