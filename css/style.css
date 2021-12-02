@@ -246,6 +246,49 @@ body{
     padding-top: 5px;
 }
 
+.message-box > div {
+    position: relative;
+    cursor: pointer;
+}
+
+.message-box .msg {
+    padding-right: 20px;
+}
+
+.fa-chevron-down{
+    position: absolute;
+    opacity: 0;
+    right: 10px;
+    top: 12px;
+    transition: 0.2s;
+}
+
+.message-box > div:hover .fa-chevron-down{
+    color: gray;
+    opacity: 1;
+}
+
+.arrow-box{
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px 5px;
+    z-index: 999;
+    min-width: 150px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.arrow-box > div{
+    padding: 2px 10px;
+}
+
+.arrow-box > div:hover{
+    background-color: #eee;
+    border-radius: 4px;
+}
+
 /* barra di scrittura messaggio  */
 .message-bar{
     width: 100%;
@@ -292,6 +335,7 @@ body{
 .show{
     display: block;
 }
+
 
 @media screen and (max-width: 1400px){
     .container{

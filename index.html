@@ -82,8 +82,13 @@
             </div>
             <!-- sezione messaggi chat aperta  -->
             <div class="message-box">
-                <div v-for="(msg, index) in contacts[pointer].messages" :class="msg.status == 'sent' ? 'right-msg' : 'left-msg'">
+                <div v-for="(msg, index) in contacts[pointer].messages" :class="msg.status == 'sent' ? 'right-msg' : 'left-msg'" @click="msg.arrowBox = !msg.arrowBox">
                     <div class="msg">{{msg.message}}</div>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="arrow-box" v-if="msg.arrowBox">
+                        <div class="msg-info">Message info</div>
+                        <div class="msg-delete" @click="deleteMsg(index)">Delete message</div>
+                    </div>
                     <div class="date">{{msg.date}}</div>
                 </div>
             </div>
