@@ -297,6 +297,7 @@ input{
     padding: 40px 80px;
     display: flex;
     flex-direction: column;
+    justify-content: end;
 }
 
 .message-box .right-msg{
