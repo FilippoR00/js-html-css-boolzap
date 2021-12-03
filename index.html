@@ -85,7 +85,7 @@
                     </div>
                     <div class="user-info">
                         <div>{{contacts[pointer].name}}</div>
-                        <div>Ultimo accesso oggi alle {{random(0,24) + ":" + random(0,59)}}</div>
+                        <div>Ultimo accesso oggi alle {{stampaDataMsg(contacts[pointer].messages.length - 1)}}</div>
                     </div>
                     
                 </div>
@@ -103,7 +103,7 @@
                         <div class="msg-info">Message info</div>
                         <div class="msg-delete" @click="deleteMsg(index)">Delete message</div>
                     </div>
-                    <div class="date">{{msg.date}}</div>
+                    <div class="date">{{stampaDataMsg(index)}}</div>
                 </div>
             </div>
             <!-- barra di scrittura messaggio -->
@@ -121,6 +121,9 @@
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/customParseFormat"></script>
+    <script>dayjs.extend(dayjs_plugin_customParseFormat)</script>
     <script src="js/script.js"></script>
 </body>
 </html>

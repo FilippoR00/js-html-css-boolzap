@@ -128,35 +128,11 @@ const app = new Vue({
         },
         // funzione che compara due stringhe (una proveniente dal nome dell'utente e una proveniente dall'input di testo), e ne trova le similitudini. Poi tramite un v-if si decide se far stampare a video l'utente.
         search : function(index){
-            if (this.contacts[index].name.toLowerCase().includes(this.tempSearch.toLowerCase())) {
-                return true
-            } else {
-                return false
-            }
+            return this.contacts[index].name.toLowerCase().includes(this.tempSearch.toLowerCase())
         },
         // funzione che prende giorno mese anno ora minuti e secondi e ritorna una stringa
         createData : function() {
-            let today = new Date();
-            let day = today.getDate();
-            let month = today.getMonth() + 1;
-            let year = today.getFullYear();
-            if (day < 10) day = '0' + day;
-            if (month < 10) month = '0' + month;
-            let date = day + '/' + month + '/' + year;
-            let ora = today.getHours();
-            let minuti = today.getMinutes();
-            let secondi = today.getSeconds();
-            if (secondi < 10) secondi = '0' + secondi;
-            if (minuti < 10) minuti = '0' + minuti;
-            if (ora < 10) ora = '0' + ora;
-            let time = ora + ":" + minuti + ":" + secondi;
-            return date + " " + time;
-        },
-        // funzione che genera un numero random compreso tra min e max 
-        random(min,max){
-            let temp = Math.floor(Math.random() * max - min + 1) + min;
-            if(temp < 10) temp = '0' + temp;
-            return temp;
+            return dayjs().format("DD/MM/YYYY hh:mm:ss");
         },
         deleteMsg(index){
             if (this.contacts[this.pointer].messages[1] == undefined){
@@ -168,6 +144,12 @@ const app = new Vue({
                     this.contacts[this.pointer].messages[index].arrowBox = true;
                 }
             }
+        },
+        // Funzione che stampa una deteminata data in ora e minuti 
+        stampaDataMsg(index) {
+            let data = this.contacts[this.pointer].messages[index].date
+            data = dayjs(data, "DD/MM/YYYY hh:mm:ss").format("HH:mm");
+            return data;
         }
     },
 })
